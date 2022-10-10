@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import fetch from 'isomorphic-unfetch'
 
 const itURL = "https://www.youtube.com/youtubei/v1/player"
 const makeBody = (videoID: string) => JSON.stringify(
