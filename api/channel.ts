@@ -26,7 +26,9 @@ export default async function handler(
   })
   const data = await res.json()
   const details = data.videoDetails
-  return response.status(200).json({
+  return response.status(200)
+  .setHeader("Content-Type", "application/json")
+  .json({
     videoId: details.videoId,
     title: details.title,
     channelId: details.channelId,
