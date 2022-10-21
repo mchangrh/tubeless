@@ -42,7 +42,7 @@ export default async function handler(
     response.status(200).json(details)
   }
   if (videoID?.length !== 11) return response.status(400).send("No videoID provided")
-  const results = getDetails(videoID as string)
+  const results = await getDetails(videoID as string)
   return response.status(200)
     .setHeader("Content-Type", "application/json")
     .json(results)
