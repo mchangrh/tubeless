@@ -27,6 +27,7 @@ const getDetails = (videoID: string) =>
       title: details.title,
       channelId: details.channelId,
       channelName: details.author,
+      publishDate: (new Date(json.microformat.playerMicroformatRenderer.publishDate)).getTime()
     }
   })
 
